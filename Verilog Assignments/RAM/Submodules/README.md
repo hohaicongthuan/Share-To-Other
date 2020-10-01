@@ -1,0 +1,4 @@
+- **D_Latch module** has been tested and it's working correctly.
+- **MemoryCell module** has been tested and it's working correctly.
+- **word module** has been tested and it's working correctly.
+- **Decoder2to4 module** has been tested and it's working correctly.

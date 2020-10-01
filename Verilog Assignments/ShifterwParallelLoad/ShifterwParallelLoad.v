@@ -1,16 +1,18 @@
+`timescale 1ns/10ps
+
 module ShifterwParallelLoad(data_i, data_L, data_R, S_i, Y_o, clk);
 	input [7:0] data_i;
 	input [1:0] S_i;
 	input data_L, data_R, clk;
 	output [7:0] Y_o;
-	
+		
 	// Internal wires
 	wire [7:0] Selector_Out;
 
 	DFlipFlop DFF_Inst[7:0](
 		.Q(Y_o[7:0]),
 		.Q_N(),
-		.D(Selector_Out),
+		.D(Selector_Out[7:0]),
 		.clk(clk)
 	);
 
@@ -23,4 +25,5 @@ module ShifterwParallelLoad(data_i, data_L, data_R, S_i, Y_o, clk);
 		.select1_i(S_i[0]),
 		.select2_i(S_i[1])
 	);
+	
 endmodule

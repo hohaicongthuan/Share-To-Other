@@ -1,0 +1,9 @@
+module TriState (data_i, oe, data_o);
+
+    input   data_i, oe;
+    output  data_o;
+    tri     data_o;
+
+    bufif1  b1(data_o, data_i, oe);
+
+endmodule
