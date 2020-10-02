@@ -1,0 +1,12 @@
+module Decoder3to8(data_i, data_o, e_i);
+	input [2:0] data_i;
+	input e_i;
+	output [7:0] data_o;
+	
+	Decoder2to4 D2to4_Inst[1:0](
+		.data_i(),
+		.data_o(),
+		.e_i()
+	);
+
+endmodule

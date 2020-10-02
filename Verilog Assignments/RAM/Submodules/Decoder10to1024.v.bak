@@ -1,0 +1,11 @@
+module Decoder10to1024(data_i, data_o);
+	input [9:0] data_i;
+	output [1023:0] data_o;
+	
+	Decoder2to4 D2to4_Inst(
+		.data_i(),
+		.data_o(),
+		.e_i()
+	);
+
+endmodule

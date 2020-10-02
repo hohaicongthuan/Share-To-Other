@@ -2,3 +2,8 @@
 - **MemoryCell module** has been tested and it's working correctly.
 - **word module** has been tested and it's working correctly.
 - **Decoder2to4 module** has been tested and it's working correctly.
+- **Decoder3to8 module** has been tested and it's working correctly.
+- **Decoder4to16 module** has been tested and it's working correctly.
+- **Decoder5to32 module** has been tested and it's working correctly.
+- **Decoder6to64 module** has been tested and it's working correctly.
+- **Decoder7to128 module** has been tested and it's working correctly.
