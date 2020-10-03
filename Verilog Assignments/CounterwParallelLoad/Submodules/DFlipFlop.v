@@ -5,8 +5,6 @@ module DFlipFlop(Q, Q_N, D, clk);
     input D, clk;
     output Q, Q_N;
 
-    wire Q, Q_N, clk, D;
-
     // Internal wires declaration
     wire w1, w2, w3, w4, D_N;    // D_N = complement of D
 
