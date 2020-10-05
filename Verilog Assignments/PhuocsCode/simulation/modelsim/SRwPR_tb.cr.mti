@@ -1,0 +1,15 @@
+D:/Ky5/Verilog/baitap2/simulation/modelsim/SRwPR.vo {1 {vlog -work work D:/Ky5/Verilog/baitap2/simulation/modelsim/SRwPR.vo
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module SRwPR
+
+Top level modules:
+	SRwPR
+
+} {} {}} D:/Ky5/Verilog/baitap2/simulation/modelsim/SRwPR_tb.v {1 {vlog -work work D:/Ky5/Verilog/baitap2/simulation/modelsim/SRwPR_tb.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module SRwPR_tb
+
+Top level modules:
+	SRwPR_tb
+
+} {} {}}

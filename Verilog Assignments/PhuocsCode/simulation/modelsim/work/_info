@@ -1,0 +1,64 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\Ky5\Verilog\SRwPR\simulation\modelsim
+vSRwPR
+Z1 !s100 E6f35QToi]f_mW@?ddMjB3
+Z2 IO=1<@jJLJ5DNobAgF]2V61
+Z3 V10_3fB1OW3A18?EHE]5bV0
+Z4 dD:\Ky5\Verilog\baitap2\simulation\modelsim
+Z5 w1601802224
+Z6 8D:/Ky5/Verilog/baitap2/simulation/modelsim/SRwPR.vo
+Z7 FD:/Ky5/Verilog/baitap2/simulation/modelsim/SRwPR.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -reportprogress|300|-work|work|D:/Ky5/Verilog/baitap2/simulation/modelsim/SRwPR.vo|
+Z10 o-work work -O0
+Z11 n@s@rw@p@r
+!i10b 1
+!s85 0
+Z12 !s108 1601803364.507000
+Z13 !s107 D:/Ky5/Verilog/baitap2/simulation/modelsim/SRwPR.vo|
+!s101 -O0
+vSRwPR_tb
+!i10b 1
+!s100 n6Gjl3n;BeNd]`?>JDDhE2
+IeNY;Il:eOjLCjhDY=5l:G3
+Z14 VdP`G6b>X2UlYNMWHM6:lE0
+R4
+w1601803361
+Z15 8D:/Ky5/Verilog/baitap2/simulation/modelsim/SRwPR_tb.v
+Z16 FD:/Ky5/Verilog/baitap2/simulation/modelsim/SRwPR_tb.v
+L0 3
+R8
+r1
+!s85 0
+31
+!s108 1601803364.632000
+!s107 D:/Ky5/Verilog/baitap2/simulation/modelsim/SRwPR_tb.v|
+Z17 !s90 -reportprogress|300|-work|work|D:/Ky5/Verilog/baitap2/simulation/modelsim/SRwPR_tb.v|
+!s101 -O0
+R10
+Z18 n@s@rw@p@r_tb
+vtb
+Z19 I5gQYh8mz=?SDR6NXJYoB62
+Z20 Vf67m2=QcN;7g8QjlNBhn@1
+R4
+Z21 w1601802907
+Z22 8D:\Ky5\Verilog\baitap2\simulation\modelsim\tb.v
+Z23 FD:\Ky5\Verilog\baitap2\simulation\modelsim\tb.v
+L0 2
+R8
+r1
+31
+Z24 !s90 -reportprogress|300|-work|work|D:\Ky5\Verilog\baitap2\simulation\modelsim\tb.v|
+R10
+Z25 !s100 Q[<Dm2nLBl`j=3TY<_3Z_1
+Z26 !s108 1601802914.350000
+Z27 !s107 D:\Ky5\Verilog\baitap2\simulation\modelsim\tb.v|
+!i10b 1
+!s85 0
+!s101 -O0
