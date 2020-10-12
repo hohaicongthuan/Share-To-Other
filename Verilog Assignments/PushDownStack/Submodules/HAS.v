@@ -1,15 +1,36 @@
 // Half Adder Subtractor
-// Rewrite it once again at 10:19 AM, 8 Oct 2020
 
-module HAS(Cin, Cout, D, DN, Q, QN, O);
-	input Cin, D, DN, Q, QN;
-	output O, Cout;
+module HAS(A, B, D, Out, Cout);
+	input A, B, D;
+	output Out, Cout;
 	
-	wire w1, w2;
+	wire w1, w2, w3, w4;
 	
-	and(w1, QN, D, Cin);
-	and(w2, Q, DN, Cin);
-	or(Cout, w1, w2);
+	HalfAdder Ha_Inst(
+		.A(A),
+		.B(B),
+		.Sum(w1),
+		.Carry(w3)
+	);
 	
-	xor(O, Q, Cin);
+	HalfSubtractor HS_Inst(
+		.A(A),
+		.B(B),
+		.Different(w2),
+		.Borrow(w4)
+	);
+	
+	Mux2_1 Selector_Inst0(
+		.data_o(Out),
+		.dataA_i(w1),
+		.dataB_i(w2),
+		.select_i(D)
+	);
+	
+	Mux2_1 Selector_Inst1(
+		.data_o(Cout),
+		.dataA_i(w3),
+		.dataB_i(w4),
+		.select_i(D)
+	);
 endmodule
