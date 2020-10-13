@@ -54,6 +54,8 @@ module PushDownStack(Rst, PushPop, En, data_i, data_o, empty, full, Clk);
 	);
 	
 	// Output logic
-	nor(empty, {Top_Output[ADDRWIDTH - 1:0]});
-	and(full, {Top_Output[ADDRWIDTH - 1:0]});
+	nor(empty, Top_Output[0], Top_Output[1], Top_Output[2], Top_Output[3], Top_Output[4], Top_Output[5],
+			Top_Output[6], Top_Output[7], Top_Output[8], Top_Output[9]);
+	and(full, Top_Output[0], Top_Output[1], Top_Output[2], Top_Output[3], Top_Output[4], Top_Output[5],
+			Top_Output[6], Top_Output[7], Top_Output[8], Top_Output[9]);
 endmodule

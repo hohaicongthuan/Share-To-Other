@@ -10,8 +10,8 @@ module UpDownCounterwRst(D, En, Clk, Out, PreN, ClrN, Cout);
 	wire [BUSWIDTH - 1:0] HAS_Cout;
 	
 	HAS HAS_Inst [BUSWIDTH - 1:0] (
-		.A({HAS_Cout[BUSWIDTH - 2:0], En}),
-		.B(Out[BUSWIDTH - 1:0]),
+		.B({HAS_Cout[BUSWIDTH - 2:0], En}),
+		.A(Out[BUSWIDTH - 1:0]),
 		.D(D),
 		.Out(HAS_Out[BUSWIDTH - 1:0]),
 		.Cout({Cout, HAS_Cout[BUSWIDTH - 2:0]})
