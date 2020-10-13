@@ -23,7 +23,8 @@ module PushDownStack(Rst, PushPop, En, data_i, data_o, empty, full, Clk);
 		.data_i(data_i[DATAWIDTH - 1:0]),
 		.data_o(data_o[DATAWIDTH - 1:0]),
 		.addr_i(Selector_Output[ADDRWIDTH - 1:0]),
-		.WEn_i(Enable_Output)
+		.WEn_i(Enable_Output),
+		.OutEn(En)
 	);
 	
 	UpDownCounterwRst Top(
