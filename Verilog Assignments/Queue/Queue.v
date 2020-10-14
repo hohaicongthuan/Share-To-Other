@@ -34,7 +34,7 @@ module Queue(Rst_i, Clk_i, En_i, RW_i, data_o, data_i, empty_o, full_o);
         .D(1'b0),
         .En({front_e,back_e}),
         .Clk(Clk_i),
-        .PreN(),
+        .PreN(1'b1),
         .ClrN(Rst_i),
         .Out({front_result [7:0], back_result [7:0]}),
         .Cout()
