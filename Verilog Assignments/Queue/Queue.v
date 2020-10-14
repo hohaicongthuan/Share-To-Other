@@ -6,7 +6,7 @@ module Queue(Rst_i, Clk_i, En_i, RW_i, data_o, data_i, empty_o, full_o);
     output empty_o, full_o;
 
     // declare data type of ports, the one without declares are wires by default
-    reg [7:0] data_o
+    reg [7:0] data_o;
 
     // declare wires
     wire front_e;       // wire that connect to enable of front counter
@@ -31,10 +31,13 @@ module Queue(Rst_i, Clk_i, En_i, RW_i, data_o, data_i, empty_o, full_o);
 
     // function description
     UpDownCounterwRst UpDownCounterwRst_inst [1:0] (
+        .D(1'b0),
         .En({front_e,back_e}),
         .Clk(Clk_i),
+        .PreN(),
         .ClrN(Rst_i),
-        .Out({front_result [7:0], back_result [7:0]})
+        .Out({front_result [7:0], back_result [7:0]}),
+        .Cout()
     );
 
     Mux2_1 Mux2_1_inst (
@@ -57,4 +60,4 @@ module Queue(Rst_i, Clk_i, En_i, RW_i, data_o, data_i, empty_o, full_o);
         .data_o(data_o [7:0])
     );
 
-endmodule;
+endmodule

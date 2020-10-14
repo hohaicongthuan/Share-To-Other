@@ -11,13 +11,11 @@ module Mux2_1(data_o, dataA_i, dataB_i, select_i);
 
     // Internal wires declaration
     wire neg_select_i, w1, w2;
-	 
-	 parameter delay = 1.55;
 
     // Functional Description
-    not #delay (neg_select_i, select_i);
-    and #delay (w1, dataA_i, neg_select_i);
-    and #delay(w2, dataB_i, select_i);
-    or #delay (data_o, w1, w2);
+    not(neg_select_i, select_i);
+    and(w1, dataA_i, neg_select_i);
+    and(w2, dataB_i, select_i);
+    or(data_o, w1, w2);
 
 endmodule
