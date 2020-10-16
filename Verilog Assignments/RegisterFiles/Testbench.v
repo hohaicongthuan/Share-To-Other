@@ -1,7 +1,7 @@
  `timescale 1ns/1ps
 
 module Testbench();
-    parameter waittime = 10;
+    parameter waittime = 20;
     integer i;
 
     reg WriteEn, ReadAEn, ReadBEn, Clk;
