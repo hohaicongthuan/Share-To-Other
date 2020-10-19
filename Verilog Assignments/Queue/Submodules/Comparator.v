@@ -24,7 +24,16 @@ module Comparator (A_i, B_i, equal_o);
         .Ro_o({Ro_out, connect_Ro_Ri[9:1]})
     );
 
-    nor(equal_o, Do_result [9:0]);
+    nor(equal_o, 
+	 Do_result [9], 
+	 Do_result [8], 
+	 Do_result [7], 
+	 Do_result [6],
+	 Do_result [5],
+	 Do_result [4],
+	 Do_result [3],
+	 Do_result [2],
+	 Do_result [1],
+	 Do_result [0]);
     
-
 endmodule

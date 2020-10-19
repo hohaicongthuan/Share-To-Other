@@ -1,6 +1,6 @@
 module UpDownCounterwRst(D, En, Clk, Out, PreN, ClrN, Cout);
 	// Define bus width here
-	parameter BUSWIDTH = 10;
+	parameter BUSWIDTH = 11;
 	
 	input D, En, Clk, PreN, ClrN;
 	output Cout;
