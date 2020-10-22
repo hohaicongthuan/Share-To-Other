@@ -1,13 +1,10 @@
 // Half Adder - Subtractor
 
-module HAS(Q, Cin, Cout, O, D);
-    input Q, Cin, D;
+module HAS(Q, Cin, Cout, O, D, D_N, Q_N);
+    input Q, Cin, D, D_N, Q_N;
     output Cout, O;
 		
-    wire w1, w2, Q_N, D_N;
-	 
-	 not(D_N, D);
-	 not(Q_N, Q);
+    wire w1, w2;
 	 
     and(w1, D, Q_N, Cin);
 	 and(w2, D_N, Q, Cin);
