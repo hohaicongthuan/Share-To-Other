@@ -1,23 +1,21 @@
-// D flip-flop
-// Q_N = complement of Q
-
-module DFlipFlop(Q, Q_N, D, clk);
-    
-    // Declare port type
-    input D, clk;
-    output Q, Q_N;
-
-    //wire D, clk;
-    //reg Q, Q_N;
-
-    // Internal wires declaration
-    wire w1, w2, w3, w4, D_N;    // D_N = complement of D
-
-    // Functional Description
-    not(D_N, D);
-    nand(w1, D, clk);
-    nand(w2, D_N, clk);
-    nand(Q, Q_N, w1);
-    nand(Q_N, Q, w2);
-
+module DFlipFlop(PreN, ClrN, D, Clk, Q, QN);
+	input PreN, ClrN, D, Clk;
+	output Q, QN;
+	
+	wire DN, Clk_N, w1, w2, w3, w4, w5, w6;
+	
+	not(DN, D);
+	not(Clk_N, Clk);
+	
+	nand(w1, D, Clk_N);
+	nand(w2, DN, Clk_N);
+	
+	nand(w3, PreN, w1, w4);
+	nand(w4, ClrN, w2, w3);
+	
+	nand(w5, w3, Clk);
+	nand(w6, w4, Clk);
+	
+	nand(Q, PreN, w5, QN);
+	nand(QN, ClrN, w6, Q);
 endmodule

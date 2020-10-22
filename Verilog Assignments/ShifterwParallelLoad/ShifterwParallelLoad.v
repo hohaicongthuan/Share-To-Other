@@ -1,9 +1,7 @@
-`timescale 1ns/10ps
-
-module ShifterwParallelLoad(data_i, data_L, data_R, S_i, Y_o, clk);
+module ShifterwParallelLoad(data_i, data_L, data_R, S_i, Y_o, Clk, Rst_N);
 	input [7:0] data_i;
 	input [1:0] S_i;
-	input data_L, data_R, clk;
+	input data_L, data_R, Clk, Rst_N;
 	output [7:0] Y_o;
 		
 	// Internal wires
@@ -11,9 +9,11 @@ module ShifterwParallelLoad(data_i, data_L, data_R, S_i, Y_o, clk);
 
 	DFlipFlop DFF_Inst[7:0](
 		.Q(Y_o[7:0]),
-		.Q_N(),
+		.QN(),
 		.D(Selector_Out[7:0]),
-		.clk(clk)
+		.Clk(Clk),
+		.PreN(1'b1),
+		.ClrN(Rst_N)
 	);
 
 	Mux4_1 Selector_Inst[7:0] (
