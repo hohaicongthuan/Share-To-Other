@@ -1,0 +1,2 @@
+- **DFlipFlop module** has been tested and it's working correctly.
+- **Selector module** has been tested and it's working correctly.
