@@ -1,10 +1,12 @@
 `timescale 1ns/1ps
 
 module Testbench();
+    parameter DATAWIDTH = 8;
+    
     reg WEn_i;
-    reg [7:0] data_i;
+    reg [DATAWIDTH - 1:0] data_i;
     reg [9:0] addr_i;
-    wire [7:0] data_o;
+    wire [DATAWIDTH - 1:0] data_o;
     
     parameter waittime = 20;
 	 integer i;

@@ -1,10 +1,12 @@
 `timescale 1ns/1ps
 
 module Testbench();
+    parameter BUSWIDTH = 8;
+    
     reg data_L, data_R, Clk;
-    reg [7:0] data_i;
+    reg [BUSWIDTH - 1:0] data_i;
     reg [1:0] S_i;
-    wire [7:0] Y_o;
+    wire [BUSWIDTH - 1:0] Y_o;
     
     
     always @ (Clk) #10 Clk <= ~Clk;
