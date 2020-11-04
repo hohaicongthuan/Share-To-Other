@@ -25,24 +25,47 @@ module Testbench();
         #waittime;
 
         // Push data to the stack
-        /*for (i = 1; i < 128; i = i + 1) begin
-            //PushPop = 1'b0;
+        /*
+        for (i = 1; i < 256; i = i + 1) begin
+            PushPop = 1'b0;
             data_i = i;
             En = 1'b1;
             #waittime;
             En = 1'b0;
             #waittime;
-        end*/
+        end
+        */
+
+        PushPop = 1'b0;
+        data_i = 8'd1;
+        En = 1'b1;
+        #waittime;
+        En = 1'b0;
+        #waittime;
+
+        PushPop = 1'b0;
+        data_i = 8'd2;
+        En = 1'b1;
+        #waittime;
+        En = 1'b0;
+        #waittime;
+
+        PushPop = 1'b0;
+        data_i = 8'd3;
+        En = 1'b1;
+        #waittime;
+        En = 1'b0;
+        #waittime;
 
         #waittime;
-        //data_i = 8'd0;
+        data_i = 8'd0;
 
         // Pop data from the stack
             PushPop = 1'b1;
             En = 1'b1;
         #waittime;
 
-        //#2000 $finish;
+        #2000 $finish;
     end
 
     //always @ (Clk) #50 Clk <= ~Clk;
