@@ -2,12 +2,13 @@
 
 module Testbench();
     parameter waittime = 20;
+    parameter DATAWIDTH = 32;
     integer i;
 
     reg WriteEn, ReadAEn, ReadBEn, Clk;
     reg [4:0] ReadA, ReadB, WriteAddr;
-    reg [31:0] data_i;
-    wire [31:0] data_oA, data_oB;
+    reg [DATAWIDTH - 1:0] data_i;
+    wire [DATAWIDTH - 1:0] data_oA, data_oB;
     
     initial begin
       Clk = 1'b0; // Initial value of the clock signal
