@@ -4,10 +4,16 @@ module Testbench();
 	reg [5:0] ShortTime_i, LongTime_i;
 	wire HR, HY, HG, FR, FY, FG;
 
+	integer i;
+
 	initial begin
-		forever #20 clk = ~clk;
+		clk = 1'b0;
 		ShortTime_i = 6'd3;
 		LongTime_i = 6'd5;
+		for (i = 0; i < 100; i = i + 1) begin
+			#10;
+			clk = ~clk;
+		end
 		#2000 $finish;
 	end
 
