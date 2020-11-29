@@ -1,1 +1,1 @@
-flowchart: https://www.semanticscholar.org/paper/Implementation-of-Integer-Square-Root-Ramesh-Kumar/e13239f021c3960141203a873baadd0a2d20a342
+flowchart of integer sqrt: https://www.semanticscholar.org/paper/Implementation-of-Integer-Square-Root-Ramesh-Kumar/e13239f021c3960141203a873baadd0a2d20a342
