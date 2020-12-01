@@ -3,7 +3,7 @@
 ## ALGORITHM FLOW CHART
 (Newton's method of calculating square root)
 
-<img src="C:\GitHub\Share-To-Other\Group Project\Reference\SquareRootApproximation.png" style="zoom: 25%;" />
+![SquareRootApproximation.png](https://github.com/AcezukyRO/Share-To-Other/blob/master/Group%20Project/Reference/SquareRootApproximation.png)
 
 
 ## STEPS
