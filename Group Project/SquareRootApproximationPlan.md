@@ -1,6 +1,13 @@
 # SQUARE ROOT APPROXIMATION CIRCUIT PLAN
 
+## ALGORITHM FLOW CHART
+(Newton's method of calculating square root)
+
+<img src="C:\GitHub\Share-To-Other\Group Project\Reference\SquareRootApproximation.png" style="zoom: 25%;" />
+
+
 ## STEPS
+
 * S1:  Input number n
 * S2: x = n;
 * S3: root = x / n;
