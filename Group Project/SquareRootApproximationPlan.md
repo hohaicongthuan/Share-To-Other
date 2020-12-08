@@ -10,7 +10,7 @@
 
 * S1:  Input number n
 * S2: x = n;
-* S3: root = x / n;
+* S3: root = n / x;
 * S4: root = root + x;
 * S5 : root = root / 2;
 * S6: temp = root - x
