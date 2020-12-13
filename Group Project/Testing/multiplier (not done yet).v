@@ -4,7 +4,7 @@ module floatingpoint_multiplier(dataA_i, dataB_i, data_o);
     output reg[DATA_WIDTH - 1:0] data_o;
 
     reg SignProduct_A, SignProduct_B, SignProduct_Final;
-	reg [7:0] ExpA, ExpB, Exp_Final;
+	reg [7:0] ExpA, ExpB, Exp_Final, ExpA_true, ExpB_true, Exp_true_afteradd, Exp_true_afteradd_1;
 	reg [23:0] MantA, MantB;
     reg [49:0] Mant_Final;
 
@@ -17,21 +17,30 @@ module floatingpoint_multiplier(dataA_i, dataB_i, data_o);
 	    MantA = { 1'b1, dataA_i[22:0] };
 	    MantB = { 1'b1, dataB_i[22:0] };
 
+        // calculate sign bit
         SignProduct_Final = SignProduct_A ^ SignProduct_B;
 
+        // multiply two mantissas
         Mant_Final = MantA * MantB;
 
-        if (Mant_Final[49] == 1) begin
-            Exp_Final = ExpA + ExpB;
-            Exp_Final = Exp_Final + 1'd1;
-            Exp_Final = Exp_Final - 8'd127;
+        // sutract each exponent to get "real exponent"
+        ExpA_true = ExpA - 8'd127;
+        ExpB_true = ExpB - 8'd127;
+
+        if (Mant_Final[49] == 1) begin      // if mantissas overflow
+            Exp_true_afteradd = ExpA_true + ExpB_true;          // add two exponents
+            Exp_true_afteradd_1 = Exp_true_afteradd + 1'd1;     // add 1 to the exponent after adding them
+            Exp_Final = Exp_true_afteradd_1 + 8'd127;           // convert to floating point format
+            
+            data_o = { SignProduct_Final, Exp_Final[7:0],Mant_Final[23:1] };
         end
         else begin
-            Exp_Final = ExpA + ExpB;
-            Exp_Final = Exp_Final - 8'd127;
+            Exp_true_afteradd = ExpA_true + ExpB_true;          // add two exponents
+            Exp_Final = Exp_true_afteradd + 8'd127;             // convert to floating point format
+            data_o = { SignProduct_Final, Exp_Final[7:0],Mant_Final[22:0] };
         end
 
         // Output
-		data_o = { SignProduct_Final, Exp_Final[7:0],Mant_Final[22:0] };
+		
     end
 endmodule
