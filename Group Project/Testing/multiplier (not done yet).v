@@ -6,7 +6,7 @@ module floatingpoint_multiplier(dataA_i, dataB_i, data_o);
     reg SignProduct_A, SignProduct_B, SignProduct_Final;
 	reg [7:0] ExpA, ExpB, Exp_Final, ExpA_true, ExpB_true, Exp_true_afteradd, Exp_true_afteradd_1;
 	reg [23:0] MantA, MantB;
-    reg [49:0] Mant_Final;
+    reg [48:0] Mant_Final;
 
     always @ (dataA_i, dataB_i) begin
 
@@ -27,9 +27,9 @@ module floatingpoint_multiplier(dataA_i, dataB_i, data_o);
         ExpA_true = ExpA - 8'd127;
         ExpB_true = ExpB - 8'd127;
 
-        if (Mant_Final[49] == 1) begin      // if mantissas overflow
+        if (Mant_Final[23] == 1) begin      // if mantissas overflow
             Exp_true_afteradd = ExpA_true + ExpB_true;          // add two exponents
-            Exp_true_afteradd_1 = Exp_true_afteradd + 1'd1;     // add 1 to the exponent after adding them
+            Exp_true_afteradd_1 = Exp_true_afteradd + 8'd1;     // add 1 to the exponent after adding them
             Exp_Final = Exp_true_afteradd_1 + 8'd127;           // convert to floating point format
             
             data_o = { SignProduct_Final, Exp_Final[7:0],Mant_Final[23:1] };
