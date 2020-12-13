@@ -6,7 +6,8 @@ module floatingpoint_multiplier(dataA_i, dataB_i, data_o);
     reg SignProduct_A, SignProduct_B, SignProduct_Final;
     reg [7:0] ExpA, ExpB, Exp_Final, ExpA_true, ExpB_true, Exp_true_afteradd, Exp_true_afteradd_1;
     reg [23:0] MantA, MantB;
-    reg [48:0] Mant_Final;
+    reg [48:0] Mant_aftermul;
+    reg [22:0] Mant_Final, Mant_Final_1;
 
     always @ (dataA_i, dataB_i) begin
 
@@ -21,26 +22,24 @@ module floatingpoint_multiplier(dataA_i, dataB_i, data_o);
         SignProduct_Final = SignProduct_A ^ SignProduct_B;
 
         // multiply two mantissas
-        Mant_Final = MantA * MantB;
+        Mant_aftermul = MantA * MantB;
 
         // sutract each exponent to get "real exponent"
         ExpA_true = ExpA - 8'd127;
         ExpB_true = ExpB - 8'd127;
+        Exp_true_afteradd = ExpA_true + ExpB_true;  // add two exponents
 
-        if (Mant_Final[23] == 1'b1) begin      // if mantissas overflow
-            Exp_true_afteradd = ExpA_true + ExpB_true;          // add two exponents
-            Exp_true_afteradd_1 = Exp_true_afteradd + 8'd1;     // add 1 to the exponent after adding them
+        if (Mant_aftermul[23] == 1'b1) begin      // if mantissas overflow
+            Exp_true_afteradd_1 = Exp_true_afteradd + 8'd1;     // add 1 to the result exponent after adding them
             Exp_Final = Exp_true_afteradd_1 + 8'd127;           // convert to floating point format
-            
-            data_o = { SignProduct_Final, Exp_Final[7:0],Mant_Final[23:1] };
+            Mant_Final [22:0] = Mant_aftermul [46:24];          // result = bit 47th to 25th
+            Mant_Final_1 = Mant_Final + 23'd1;                  // add 1 to the mant final
+            data_o = { SignProduct_Final, Exp_Final[7:0], Mant_Final_1[22:0] };
         end
         else begin
-            Exp_true_afteradd = ExpA_true + ExpB_true;          // add two exponents
             Exp_Final = Exp_true_afteradd + 8'd127;             // convert to floating point format
-            data_o = { SignProduct_Final, Exp_Final[7:0],Mant_Final[22:0] };
+            Mant_Final [22:0] = Mant_aftermul [45:23];          // result = bit 46th to 24th
+            data_o = { SignProduct_Final, Exp_Final[7:0], Mant_Final[22:0] };
         end
-
-        // Output
-		
     end
 endmodule
