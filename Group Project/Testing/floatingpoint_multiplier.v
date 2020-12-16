@@ -39,6 +39,8 @@ module floatingpoint_multiplier(dataA_i, dataB_i, data_o);
         else begin
             Exp_Final = Exp_true_afteradd + 8'd127;             // convert to floating point format
             Mant_Final [22:0] = Mant_aftermul [45:23];          // result = bit 46th to 24th
+	    Mant_Final_1 = 23'd0;
+	    Exp_true_afteradd_1 = 8'd0;
             data_o = { SignProduct_Final, Exp_Final[7:0], Mant_Final[22:0] };
         end
     end
