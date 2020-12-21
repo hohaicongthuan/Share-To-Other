@@ -1,9 +1,10 @@
-module register_controller(clk,data_i,data_o);
+module register_OE(clk,data_i,data_o, OE_i);
 
 parameter DATA_WITDH = 32;
 
 // Declare port type
 input clk;
+input OE_i;
 input [DATA_WITDH - 1:0] data_i;
 output [DATA_WITDH - 1:0] data_o;
 
@@ -14,12 +15,13 @@ output [DATA_WITDH - 1:0] data_o;
 
 // wire: day noi, luon danh cho: input
 // reg: thanh ghi, dung de luu tru, bao gom ca wire va register.
-	// Bat buoc la kieu register neu la thanh ghi (dung de luu gia tri)
-	// La kieu wire khi su dung register de gan gia tri
-	// flipflop output luon la kieu reg.
-	
+    // Bat buoc la kieu register neu la thanh ghi (dung de luu gia tri)
+    // La kieu wire khi su dung register de gan gia tri
+    // flipflop output luon la kieu reg.
+    
 wire clk;
 wire [DATA_WITDH - 1:0] data_i;
+reg [DATA_WITDH - 1:0] data_o_temp;
 reg [DATA_WITDH - 1:0] data_o;
 
 // Functional Description
@@ -29,9 +31,10 @@ reg [DATA_WITDH - 1:0] data_o;
 // code cua verilog chay song song chu ko phai tu tren xuong => cac phep gan "<=" co the lay so tu gia tri cu. con phep "=" thi bat buoc bang gia tri moi.
 // mach tuan tu luon xai "<="
 
-always @(posedge clk) 
-begin	
-		data_o <= data_i;
+always @(OE_i, data_i, data_o_temp, clk) 
+begin   
+        data_o_temp <= data_i;
+        data_o = (OE_i == 1'b1) ? data_o_temp : 32'd0;
 end
 
 endmodule
