@@ -27,8 +27,8 @@ for i in range(4096):
     x = bin(i).replace("0b", "").zfill(12)
     x = "001111111111" + x + "0000000000000000000000000000000000000000"
     x = bin_to_float(x)
-    x = 1.0/(x*x)
+    x = round(1.0/(x*x), 10)
     x = float_to_bin(x)[12:35]
-    x = int(x, 2) + 1
+    x = int(x, 2) + 0
     x = bin(x).replace("0b", "").zfill(23)
     print("12'd", i, ": data_o = 23'b", x, ";")
