@@ -7,16 +7,10 @@ FP_Datapath test status:
 + register_OE.v: done.
 + RegisterFile.v: done.
 ! datapath.v: on going.
+```
+```diff
 FP_Controller
 + register.v: done.
 + next_state.v: done.
 + outputs.v: done.
-```
-
-```diff
-- text in red
-+ text in green
-! text in orange
-# text in gray
-@@ text in purple (and bold)@@
 ```
