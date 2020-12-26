@@ -64,6 +64,10 @@ module OutputGenerator(data_o_i, data_iA, data_iB, data_o);
 				begin
 					data_o = { data_o_i[31], ExpFinal, data_iA[22:0] };
 				end
+		else if (data_iA[22:0] == data_iB[22:0])
+				begin
+					data_o = { data_o_i[31], ExpFinal, 23'd0 };
+				end
 		else data_o = data_o_i;
 	end
 endmodule
