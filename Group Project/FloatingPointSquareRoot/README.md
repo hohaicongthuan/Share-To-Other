@@ -3,14 +3,14 @@
 
 ```diff
 FP_Datapath test status:
-    + Mux2To1_32bit.v: done.
-    + register_OE.v: done.
-    + RegisterFile.v: done.
-    ! datapath.v: on going.
++ Mux2To1_32bit.v: done.
++ register_OE.v: done.
++ RegisterFile.v: done.
+! datapath.v: on going.
 FP_Controller
-    + register.v: done.
-    + next_state.v: done.
-    + outputs.v: done.
++ register.v: done.
++ next_state.v: done.
++ outputs.v: done.
 ```
 
 ```diff
