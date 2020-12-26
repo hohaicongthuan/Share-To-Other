@@ -9,7 +9,7 @@ FP_Datapath test status:
 ! datapath.v: ongoing.
 ```
 ```diff
-FP_Controller:
+FP_Controller test status:
 + register.v: done.
 + next_state.v: done.
 + outputs.v: done.
