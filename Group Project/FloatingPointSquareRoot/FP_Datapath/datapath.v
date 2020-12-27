@@ -1,4 +1,5 @@
-module datapath (clk, data_i, data_o, negative_o, zero_o
+module datapath (IE, WE, OE, ADDR_WR, ADDR_RDA, ADDR_RDB, ALU_Op,
+                clk, data_i, data_o, negative_o, zero_o
                 // Reg_0, Reg_1, Reg_2, Reg_3, Reg_4, Reg_5, Reg_6, Reg_7
                 );
     
@@ -6,14 +7,14 @@ module datapath (clk, data_i, data_o, negative_o, zero_o
     
     input [DATA_WITDH - 1:0] data_i;
     input clk;
+    input IE, WE, OE;
+	input [2:0] ADDR_WR, ADDR_RDA, ADDR_RDB;
+	input [1:0] ALU_Op;
     output [DATA_WITDH - 1:0] data_o;
     output negative_o, zero_o;
     // output [(DATA_WITDH-1):0] Reg_0, Reg_1, Reg_2, Reg_3, Reg_4, Reg_5, Reg_6, Reg_7;
     
 // controller wires
-    wire IE, WE, OE;
-	wire [2:0] ADDR_WR, ADDR_RDA, ADDR_RDB;
-	wire [1:0] ALU_Op;
     wire [DATA_WITDH - 1:0] mux_o;
     wire [DATA_WITDH - 1:0] RDA_o;
     wire [DATA_WITDH - 1:0] RDB_o;
@@ -63,17 +64,5 @@ module datapath (clk, data_i, data_o, negative_o, zero_o
         .data_i(ALU_o),
         .data_o(data_o), 
         .OE_i(OE)
-    );
-
-    controller controller_inst0(
-        .clk(clk),
-        .negative(negative),
-        .IE(IE), 
-        .WE(WE), 
-        .OE(OE), 
-        .ADDR_WR(ADDR_WR), 
-        .ADDR_RDA(ADDR_RDA), 
-        .ADDR_RDB(ADDR_RDB), 
-        .ALU_Op(ALU_Op)
     );
 endmodule
