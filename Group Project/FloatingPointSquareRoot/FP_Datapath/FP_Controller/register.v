@@ -1,6 +1,6 @@
 module register_controller(clk,data_i,data_o);
 
-parameter DATA_WITDH = 32;
+parameter DATA_WITDH = 4;
 
 // Declare port type
 input clk;
