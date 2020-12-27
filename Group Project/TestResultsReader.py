@@ -1,6 +1,7 @@
 # From: https://stackoverflow.com/questions/8751653/how-to-convert-a-binary-string-into-a-float-value
 from codecs import decode
 import struct
+import math
 
 def bin_to_float(b):
     """ Convert binary string to a float. """
@@ -22,11 +23,20 @@ def float_to_bin(value):  # For testing.
 ###############################################################################################
 ###############################################################################################
 # My own code starts here
+# This code will read, check and convert test results into human-readable form
+
 f = open("TestResults.txt", "r")
+x = 0.0
+
 for i in f:
+    x = round(x + 0.0001, 10)
+    print("Test Number x =\t\t\t", x)
+    print("Square root of x =\t\t", math.sqrt(x))
     Sign    = i[:1]
     Exp     = bin(int(i[1:9], 2) - 127 + 1023).replace("0b", "").zfill(11)
     Mant    = i[9:32] + "00000000000000000000000000000"
     Num     = Sign + Exp + Mant
-    print(round(bin_to_float(Num), 5))
+    print("Result from FP_SquareRoot:\t", bin_to_float(Num))
+    print("Error:\t\t\t\t", abs(math.sqrt(x) - bin_to_float(Num)))
+    print("")
 f.close()
