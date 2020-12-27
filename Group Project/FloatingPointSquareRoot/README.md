@@ -14,4 +14,5 @@ FP_Controller test status:
 + register.v: done.
 + next_state.v: done.
 + outputs.v: done.
++ controller.v: done. (3 above files together)
 ```
