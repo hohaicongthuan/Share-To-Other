@@ -7,7 +7,7 @@ FP_Datapath test status:
 + Mux2To1_32bit.v: done.
 + register_OE.v: done.
 + RegisterFile.v: done.
-! datapath.v: ongoing.
+! datapath.v: compiled correctly but not working yet...
 ```
 ```diff
 FP_Controller test status:
