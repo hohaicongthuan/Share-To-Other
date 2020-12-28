@@ -3,3 +3,5 @@ flowchart of integer sqrt: https://www.semanticscholar.org/paper/Implementation-
 demo: https://www.desmos.com/calculator
 fp converter: https://www.h-schmidt.net/FloatConverter/IEEE754.html
 fp calculating: http://weitz.de/ieee/
+file reading: https://verilogcodes.blogspot.com/2017/11/file-reading-and-writing-in-verilog.html?m=1
+
