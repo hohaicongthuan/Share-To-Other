@@ -22,83 +22,83 @@ module Controller_Outputs(CurrentState, data_o);
 
     always @ (CurrentState) begin
         case (CurrentState)
-            S0: data_o      =    14'b00000000000000;
-            S1: data_o      =    14'b11001000000000;
-            S2: data_o      =    14'b01010001000000;
+            S0: data_o      =    14'b00000000000000;    // Initial state
+            S1: data_o      =    14'b11001000000000;    // Input n
+            S2: data_o      =    14'b01010001000000;    // x = n
             
             // Iteration 1
-            S3: data_o      =    14'b01011001010100;
-            S4: data_o      =    14'b01011011010000;
-            S5: data_o      =    14'b01011011101100;
-            S6: data_o      =    14'b01010011000000;
+            S3: data_o      =    14'b01011001010100;    // root = n / x
+            S4: data_o      =    14'b01011011010000;    // root = root + x
+            S5: data_o      =    14'b01011011101100;    // root = root / 2
+            S6: data_o      =    14'b01010011000000;    // x = root
 
             // Iteration 2
-            S7: data_o      =    14'b01011001010100;
-            S8: data_o      =    14'b01011011010000;
-            S9: data_o      =    14'b01011011101100;
-            S10: data_o      =    14'b01010011000000;
+            S7: data_o      =    14'b01011001010100;    // root = n / x
+            S8: data_o      =    14'b01011011010000;    // root = root + x
+            S9: data_o      =    14'b01011011101100;    // root = root / 2
+            S10: data_o      =    14'b01010011000000;   // x = root
 
             // Iteration 3
-            S11: data_o      =    14'b01011001010100;
-            S12: data_o      =    14'b01011011010000;
-            S13: data_o      =    14'b01011011101100;
-            S14: data_o      =    14'b01010011000000;
+            S11: data_o      =    14'b01011001010100;   // root = n / x
+            S12: data_o      =    14'b01011011010000;   // root = root + x
+            S13: data_o      =    14'b01011011101100;   // root = root / 2
+            S14: data_o      =    14'b01010011000000;   // x = root
 
             // Iteration 4
-            S15: data_o      =    14'b01011001010100;
-            S16: data_o      =    14'b01011011010000;
-            S17: data_o      =    14'b01011011101100;
-            S18: data_o      =    14'b01010011000000;
+            S15: data_o      =    14'b01011001010100;   // root = n / x
+            S16: data_o      =    14'b01011011010000;   // root = root + x
+            S17: data_o      =    14'b01011011101100;   // root = root / 2
+            S18: data_o      =    14'b01010011000000;   // x = root
 
             // Iteration 5
-            S19: data_o      =    14'b01011001010100;
-            S20: data_o      =    14'b01011011010000;
-            S21: data_o      =    14'b01011011101100;
-            S22: data_o      =    14'b01010011000000;
+            S19: data_o      =    14'b01011001010100;   // root = n / x
+            S20: data_o      =    14'b01011011010000;   // root = root + x
+            S21: data_o      =    14'b01011011101100;   // root = root / 2
+            S22: data_o      =    14'b01010011000000;   // x = root
 
             // Iteration 6
-            S23: data_o      =    14'b01011001010100;
-            S24: data_o      =    14'b01011011010000;
-            S25: data_o      =    14'b01011011101100;
-            S26: data_o      =    14'b01010011000000;
+            S23: data_o      =    14'b01011001010100;   // root = n / x
+            S24: data_o      =    14'b01011011010000;   // root = root + x
+            S25: data_o      =    14'b01011011101100;   // root = root / 2
+            S26: data_o      =    14'b01010011000000;   // x = root
 
             // Iteration 7
-            S27: data_o      =    14'b01011001010100;
-            S28: data_o      =    14'b01011011010000;
-            S29: data_o      =    14'b01011011101100;
-            S30: data_o      =    14'b01010011000000;
+            S27: data_o      =    14'b01011001010100;   // root = n / x
+            S28: data_o      =    14'b01011011010000;   // root = root + x
+            S29: data_o      =    14'b01011011101100;   // root = root / 2
+            S30: data_o      =    14'b01010011000000;   // x = root
 
             // Iteration 8
-            S31: data_o      =    14'b01011001010100;
-            S32: data_o      =    14'b01011011010000;
-            S33: data_o      =    14'b01011011101100;
-            S34: data_o      =    14'b01010011000000;
+            S31: data_o      =    14'b01011001010100;   // root = n / x
+            S32: data_o      =    14'b01011011010000;   // root = root + x
+            S33: data_o      =    14'b01011011101100;   // root = root / 2
+            S34: data_o      =    14'b01010011000000;   // x = root
 
             // Iteration 9
-            S35: data_o      =    14'b01011001010100;
-            S36: data_o      =    14'b01011011010000;
-            S37: data_o      =    14'b01011011101100;
-            S38: data_o      =    14'b01010011000000;
+            S35: data_o      =    14'b01011001010100;   // root = n / x
+            S36: data_o      =    14'b01011011010000;   // root = root + x
+            S37: data_o      =    14'b01011011101100;   // root = root / 2
+            S38: data_o      =    14'b01010011000000;   // x = root
 
             // Iteration 10
-            S39: data_o      =    14'b01011001010100;
-            S40: data_o      =    14'b01011011010000;
-            S41: data_o      =    14'b01011011101100;
-            S42: data_o      =    14'b01010011000000;
+            S39: data_o      =    14'b01011001010100;   // root = n / x
+            S40: data_o      =    14'b01011011010000;   // root = root + x
+            S41: data_o      =    14'b01011011101100;   // root = root / 2
+            S42: data_o      =    14'b01010011000000;   // x = root
 
             // Iteration 11
-            S43: data_o      =    14'b01011001010100;
-            S44: data_o      =    14'b01011011010000;
-            S45: data_o      =    14'b01011011101100;
-            S46: data_o      =    14'b01010011000000;
+            S43: data_o      =    14'b01011001010100;   // root = n / x
+            S44: data_o      =    14'b01011011010000;   // root = root + x
+            S45: data_o      =    14'b01011011101100;   // root = root / 2
+            S46: data_o      =    14'b01010011000000;   // x = root
 
             // Iteration 12
-            S47: data_o      =    14'b01011001010100;
-            S48: data_o      =    14'b01011011010000;
-            S49: data_o      =    14'b01011011101100;
+            S47: data_o      =    14'b01011001010100;   // root = n / x
+            S48: data_o      =    14'b01011011010000;   // root = root + x
+            S49: data_o      =    14'b01011011101100;   // root = root / 2
 
             // Output
-            S50: data_o     =    14'b00111011000001;
+            S50: data_o     =    14'b00111011000001;    //Output value of root
             default: data_o =    14'b00000000000000;
         endcase
     end
