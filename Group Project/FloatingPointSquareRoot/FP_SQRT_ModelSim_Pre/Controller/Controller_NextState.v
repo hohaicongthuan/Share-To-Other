@@ -14,7 +14,8 @@ module Controller_NextState(CurrentState, NextState, negative, start);
                 S36 = 6'd36,    S37 = 6'd37,    S38 = 6'd38,
                 S39 = 6'd39,    S40 = 6'd40,    S41 = 6'd41,
                 S42 = 6'd42,    S43 = 6'd43,    S44 = 6'd44,
-                S45 = 6'd45,    S46 = 6'd46;
+                S45 = 6'd45,    S46 = 6'd46,    S47 = 6'd47,
+                S48 = 6'd48,    S49 = 6'd49,    S50 = 6'd50;
     
     input   	start, negative;
     input   	[5:0] CurrentState;
@@ -68,7 +69,11 @@ module Controller_NextState(CurrentState, NextState, negative, start);
             S43: NextState = S44;
             S44: NextState = S45;
             S45: NextState = S46;
-            S46: NextState = S0;
+            S46: NextState = S47;
+            S47: NextState = S48;
+            S48: NextState = S49;
+            S49: NextState = S50;
+            S50: NextState = S0;
             default: NextState = S0;
         endcase
     end

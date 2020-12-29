@@ -5,7 +5,7 @@ module Datapath(data_i, data_o, control_signal, clk, flg_negative);
     output  flg_negative;
     output  [31:0] data_o;
 
-    wire [31:0] ALU_Out, In_En_Out, RF_A_Out, RF_B_Out;
+    wire [31:0] ALU_Out, In_En_Out, RF_A_Out, RF_B_Out, Reg_Out_Out;
 
     Datapath_Mux2to1 In_En_Inst0(
         .data_o(In_En_Out),
@@ -34,7 +34,13 @@ module Datapath(data_i, data_o, control_signal, clk, flg_negative);
     register_OE Reg_Output_Inst0(
         .clk(clk),
         .data_i(ALU_Out),
-        .data_o(data_o),
+        .data_o(Reg_Out_Out),
         .OE_i(control_signal[0])
+    );
+
+    Datapath_OutputGen OutGen_Inst0(
+        .data_i(data_i),
+        .data_o(data_o),
+        .data_o_i(Reg_Out_Out)
     );
 endmodule

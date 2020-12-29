@@ -24,8 +24,8 @@ def float_to_bin(value):  # For testing.
 # My own code starts here
 # This code will generate test cases for the floating-point square root circuit
 x = 0.0
-for i in range(1000000):
-    x = round(x + 0.001, 10)
+for i in range(1000):
+    x = round(x + 1.0, 10)
     Sign    = float_to_bin(x)[:1]
     Exp     = bin(int(float_to_bin(x)[1:12], 2) - 1023 + 127).replace("0b", "").zfill(8)
     Mant    = float_to_bin(x)[12:35]

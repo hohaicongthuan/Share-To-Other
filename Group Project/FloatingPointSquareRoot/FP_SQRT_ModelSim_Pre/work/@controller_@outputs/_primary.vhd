@@ -48,7 +48,11 @@ entity Controller_Outputs is
         S43             : vl_logic_vector(0 to 5) := (Hi1, Hi0, Hi1, Hi0, Hi1, Hi1);
         S44             : vl_logic_vector(0 to 5) := (Hi1, Hi0, Hi1, Hi1, Hi0, Hi0);
         S45             : vl_logic_vector(0 to 5) := (Hi1, Hi0, Hi1, Hi1, Hi0, Hi1);
-        S46             : vl_logic_vector(0 to 5) := (Hi1, Hi0, Hi1, Hi1, Hi1, Hi0)
+        S46             : vl_logic_vector(0 to 5) := (Hi1, Hi0, Hi1, Hi1, Hi1, Hi0);
+        S47             : vl_logic_vector(0 to 5) := (Hi1, Hi0, Hi1, Hi1, Hi1, Hi1);
+        S48             : vl_logic_vector(0 to 5) := (Hi1, Hi1, Hi0, Hi0, Hi0, Hi0);
+        S49             : vl_logic_vector(0 to 5) := (Hi1, Hi1, Hi0, Hi0, Hi0, Hi1);
+        S50             : vl_logic_vector(0 to 5) := (Hi1, Hi1, Hi0, Hi0, Hi1, Hi0)
     );
     port(
         CurrentState    : in     vl_logic_vector(5 downto 0);
@@ -102,4 +106,8 @@ entity Controller_Outputs is
     attribute mti_svvh_generic_type of S44 : constant is 1;
     attribute mti_svvh_generic_type of S45 : constant is 1;
     attribute mti_svvh_generic_type of S46 : constant is 1;
+    attribute mti_svvh_generic_type of S47 : constant is 1;
+    attribute mti_svvh_generic_type of S48 : constant is 1;
+    attribute mti_svvh_generic_type of S49 : constant is 1;
+    attribute mti_svvh_generic_type of S50 : constant is 1;
 end Controller_Outputs;

@@ -12,7 +12,7 @@ module Testbench();
     reg [DATAWIDTH - 1:0] data_i;
     wire [DATAWIDTH - 1:0] data_o;
     
-    reg [31:0] TestCases [1000000:0];
+    reg [31:0] TestCases [1000:0];
 
     initial begin
       clk = 1'b0; // Initial value of the clock signal
@@ -24,7 +24,7 @@ module Testbench();
         start = 1'b0;
         $readmemb("TestCases.txt", TestCases);
 
-        for (i = 0; i < 1000000; i = i + 1) begin
+        for (i = 0; i < 1000; i = i + 1) begin
             start = 1'b1;
             data_i = TestCases[i];
             #clocktime; #clocktime; #clocktime;

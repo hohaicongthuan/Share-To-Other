@@ -14,7 +14,8 @@ module Controller_Outputs(CurrentState, data_o);
                 S36 = 6'd36,    S37 = 6'd37,    S38 = 6'd38,
                 S39 = 6'd39,    S40 = 6'd40,    S41 = 6'd41,
                 S42 = 6'd42,    S43 = 6'd43,    S44 = 6'd44,
-                S45 = 6'd45,    S46 = 6'd46;
+                S45 = 6'd45,    S46 = 6'd46,    S47 = 6'd47,
+                S48 = 6'd48,    S49 = 6'd49,    S50 = 6'd50;
     
     input   	[5:0] CurrentState;
     output reg [13:0] data_o;
@@ -89,9 +90,15 @@ module Controller_Outputs(CurrentState, data_o);
             S43: data_o      =    14'b01011001010100;
             S44: data_o      =    14'b01011011010000;
             S45: data_o      =    14'b01011011101100;
+            S46: data_o      =    14'b01010011000000;
+
+            // Iteration 12
+            S47: data_o      =    14'b01011001010100;
+            S48: data_o      =    14'b01011011010000;
+            S49: data_o      =    14'b01011011101100;
 
             // Output
-            S46: data_o     =    14'b00111011000001;
+            S50: data_o     =    14'b00111011000001;
             default: data_o =    14'b00000000000000;
         endcase
     end
