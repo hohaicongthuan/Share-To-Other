@@ -16,8 +16,8 @@ def SquareRoot(n):
 num = 0.0
 NumOfCase = 0
 AverageError = 0
-for i in range(1000000000):
-    num += 0.0001
+for i in range(1000000):
+    num += 1.0
     print("Test Number:\t\t\t", num)
     print("Square Root:\t\t\t", math.sqrt(num))
     print("Result from the Algorithm:\t", SquareRoot(num))
