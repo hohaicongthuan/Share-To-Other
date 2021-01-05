@@ -1,6 +1,0 @@
-- *DFFwPreNClr module* has been tested and it works correctly.
-- *HAS module* has been tested and it works correctly.
-- *HalfSubtractor module* has been tested and it works correctly.
-- *HalfAdder module* has been tested and it works correctly.
-- *Mux2_1 module* has been tested and it works correctly.
-- *UpDownCounterwRst module* has been tested and it works correctly. ***Note: the counter must be reset first in order to count properly.***

@@ -1,1 +1,6 @@
+/**/incremental_db
+/**/output_files
 /**/*.bak
+/**/*.vwf
+Group Project/TestResults.txt
+Group Project/TestResultsReader.txt

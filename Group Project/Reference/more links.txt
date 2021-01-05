@@ -1,0 +1,7 @@
+geek link: https://www.geeksforgeeks.org/find-root-of-a-number-using-newtons-method/?fbclid=IwAR05Mlv9lqCZOqXE3YzsYQVRxnzu30oxNZKJ52TO35M_stSjM0UPAe0uRU4#:~:text=Let%20N%20be%20any%20number,correct%20square%20root%20of%20N
+flowchart of integer sqrt: https://www.semanticscholar.org/paper/Implementation-of-Integer-Square-Root-Ramesh-Kumar/e13239f021c3960141203a873baadd0a2d20a342
+demo: https://www.desmos.com/calculator
+fp converter: https://www.h-schmidt.net/FloatConverter/IEEE754.html
+fp calculating: http://weitz.de/ieee/
+file reading: https://verilogcodes.blogspot.com/2017/11/file-reading-and-writing-in-verilog.html?m=1
+
